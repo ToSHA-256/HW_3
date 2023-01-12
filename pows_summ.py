@@ -15,6 +15,13 @@ def pow_2_cub_slow(n):
         sum += i ** 3
     return sum
 
+def pow_2_cub_while(n):
+    sum = 0
+    i=1
+    while i < n+1:
+        sum += i
+        i+=1
+    return sum**2
 
 while True:
     num = ''
@@ -24,8 +31,10 @@ while True:
 
     num = int(num)
     start_time = datetime.now()
-    print(f'Быстрый вариант: {pow_2_cub_fast(num)}')
-    print(f'Время: {datetime.now() - start_time}')
+    print(f'Сумма кубов: {pow_2_cub_fast(num)}')
+    print(f'Время быстрый: {datetime.now() - start_time}')
     start_time = datetime.now()
     print(f'Сумма кубов: {pow_2_cub_slow(num)}')
-    print(f'Медленный: {datetime.now() - start_time}')
+    print(f'Время медленный: {datetime.now() - start_time}')
+
+    print(f'While: {pow_2_cub_while(num)}')
